@@ -1,284 +1,1236 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gyani Baba Agency</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, sans-serif;
+<title>Gyani Baba Agency</title>
+<meta name="description" content="Gyani Baba Agency - Digital Marketing, Content Creation, Branding & Growth">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#02070d;
+    color:#fff;
+    font-family:Arial,Helvetica,sans-serif;
+    overflow-x:hidden;
+}
+
+body:before{
+    content:"";
+    position:fixed;
+    width:500px;
+    height:500px;
+    background:#007bff;
+    filter:blur(180px);
+    opacity:.12;
+    top:-180px;
+    left:-150px;
+    pointer-events:none;
+}
+
+a{
+    color:inherit;
+    text-decoration:none;
+}
+
+.container{
+    width:90%;
+    max-width:1180px;
+    margin:auto;
+}
+
+/* NAVBAR */
+
+nav{
+    height:75px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    border-bottom:1px solid rgba(255,255,255,.07);
+}
+
+.logo{
+    font-size:21px;
+    font-weight:900;
+    letter-spacing:1px;
+}
+
+.logo span{
+    color:#168cff;
+}
+
+.navlinks{
+    display:flex;
+    gap:25px;
+    font-size:13px;
+    color:#aaa;
+}
+
+.navlinks a:hover{
+    color:#168cff;
+}
+
+.navbtn{
+    padding:10px 18px;
+    border:1px solid #168cff;
+    border-radius:25px;
+    color:#fff;
+    font-size:13px;
+    transition:.3s;
+}
+
+.navbtn:hover{
+    background:#168cff;
+    box-shadow:0 0 25px #168cff;
+}
+
+/* HERO */
+
+.hero{
+    min-height:720px;
+    display:flex;
+    align-items:center;
+    position:relative;
+    overflow:hidden;
+}
+
+.hero-content{
+    width:52%;
+    z-index:2;
+}
+
+.smalltitle{
+    color:#168cff;
+    font-size:13px;
+    letter-spacing:3px;
+    margin-bottom:18px;
+    text-transform:uppercase;
+}
+
+.hero h1{
+    font-size:clamp(48px,7vw,82px);
+    line-height:.94;
+    font-weight:900;
+    margin-bottom:25px;
+}
+
+.blue{
+    color:#168cff;
+}
+
+.hero p{
+    color:#a8b0b8;
+    max-width:570px;
+    font-size:17px;
+    line-height:1.7;
+    margin-bottom:30px;
+}
+
+.buttons{
+    display:flex;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    display:inline-block;
+    padding:14px 25px;
+    border-radius:30px;
+    background:#168cff;
+    font-weight:bold;
+    font-size:14px;
+    box-shadow:0 0 25px rgba(22,140,255,.25);
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 0 35px rgba(22,140,255,.6);
+}
+
+.btn-outline{
+    background:transparent;
+    border:1px solid #314052;
+    box-shadow:none;
+}
+
+.btn-outline:hover{
+    border-color:#168cff;
+}
+
+.hero-photo{
+    position:absolute;
+    right:-40px;
+    bottom:0;
+    width:54%;
+    max-width:650px;
+    height:650px;
+    display:flex;
+    justify-content:center;
+    align-items:end;
+}
+
+.hero-photo:after{
+    content:"";
+    position:absolute;
+    width:450px;
+    height:450px;
+    background:#168cff;
+    opacity:.13;
+    filter:blur(100px);
+    z-index:-1;
+}
+
+.hero-photo img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center top;
+    mask-image:linear-gradient(to bottom,#000 75%,transparent 100%);
+    -webkit-mask-image:linear-gradient(to bottom,#000 75%,transparent 100%);
+    animation:float 5s ease-in-out infinite;
+}
+
+@keyframes float{
+    0%,100%{transform:translateY(0)}
+    50%{transform:translateY(-8px)}
+}
+
+/* STATS */
+
+.stats{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    border:1px solid #17283a;
+    border-radius:18px;
+    background:rgba(7,16,27,.85);
+    margin-top:-50px;
+    position:relative;
+    z-index:5;
+    overflow:hidden;
+}
+
+.stat{
+    padding:28px 20px;
+    text-align:center;
+    border-right:1px solid #17283a;
+}
+
+.stat:last-child{
+    border:0;
+}
+
+.stat h2{
+    color:#168cff;
+    font-size:30px;
+    margin-bottom:5px;
+}
+
+.stat p{
+    color:#8c99a7;
+    font-size:12px;
+}
+
+/* SECTION */
+
+section{
+    padding:100px 0;
+}
+
+.section-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:end;
+    margin-bottom:45px;
+}
+
+.section-head h2{
+    font-size:42px;
+    line-height:1;
+}
+
+.section-head p{
+    color:#8995a3;
+    max-width:430px;
+    font-size:14px;
+}
+
+/* SERVICES */
+
+.services{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+}
+
+.card{
+    background:linear-gradient(145deg,#08121f,#050b12);
+    border:1px solid #17283a;
+    border-radius:18px;
+    padding:30px;
+    transition:.4s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    border-color:#168cff;
+    box-shadow:0 15px 50px rgba(0,100,255,.13);
+}
+
+.icon{
+    width:50px;
+    height:50px;
+    border-radius:14px;
+    background:#071a2c;
+    border:1px solid #123b62;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#168cff;
+    font-size:23px;
+    margin-bottom:22px;
+}
+
+.card h3{
+    font-size:20px;
+    margin-bottom:10px;
+}
+
+.card p{
+    color:#8995a3;
+    font-size:13px;
+    line-height:1.7;
+}
+
+/* PACKAGES */
+
+.packages{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.package{
+    background:#07101a;
+    border:1px solid #1a2b3d;
+    border-radius:20px;
+    padding:32px;
+    position:relative;
+}
+
+.package.popular{
+    border-color:#168cff;
+    box-shadow:0 0 40px rgba(22,140,255,.15);
+}
+
+.badge{
+    position:absolute;
+    top:-13px;
+    right:25px;
+    background:#168cff;
+    color:#fff;
+    padding:7px 14px;
+    border-radius:20px;
+    font-size:11px;
+    font-weight:bold;
+}
+
+.package h3{
+    font-size:22px;
+}
+
+.price{
+    font-size:38px;
+    font-weight:900;
+    margin:18px 0;
+}
+
+.price small{
+    color:#788492;
+    font-size:12px;
+}
+
+.package ul{
+    list-style:none;
+    margin:25px 0;
+}
+
+.package li{
+    color:#a3adb8;
+    font-size:13px;
+    padding:9px 0;
+    border-bottom:1px solid #132130;
+}
+
+.package li:before{
+    content:"✓";
+    color:#168cff;
+    margin-right:9px;
+}
+
+.package .btn{
+    width:100%;
+    text-align:center;
+}
+
+/* RESULTS */
+
+.results{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+    margin-bottom:30px;
+}
+
+.result{
+    padding:25px;
+    background:#07101a;
+    border:1px solid #17283a;
+    border-radius:15px;
+}
+
+.result h3{
+    color:#168cff;
+    font-size:28px;
+}
+
+.result p{
+    color:#8995a3;
+    font-size:12px;
+}
+
+/* SHOWCASE */
+
+.showcase{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+}
+
+.work{
+    height:210px;
+    border-radius:15px;
+    overflow:hidden;
+    border:1px solid #182a3d;
+    position:relative;
+    background:#08111c;
+}
+
+.work img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:.5s;
+}
+
+.work:hover img{
+    transform:scale(1.08);
+}
+
+.work span{
+    position:absolute;
+    left:15px;
+    bottom:15px;
+    background:rgba(0,0,0,.7);
+    padding:7px 12px;
+    border-radius:15px;
+    font-size:11px;
+}
+
+/* COURSES */
+
+.courses{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+}
+
+.course{
+    background:#07101a;
+    border:1px solid #17283a;
+    padding:25px;
+    border-radius:18px;
+}
+
+.course h3{
+    margin:12px 0;
+}
+
+.course p{
+    color:#8995a3;
+    font-size:13px;
+}
+
+/* FOUNDER */
+
+.founder{
+    display:grid;
+    grid-template-columns:350px 1fr;
+    gap:50px;
+    align-items:center;
+}
+
+.founder-img{
+    height:420px;
+    border-radius:25px;
+    overflow:hidden;
+    border:1px solid #17304a;
+}
+
+.founder-img img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.founder h2{
+    font-size:48px;
+    margin:12px 0 20px;
+}
+
+.founder p{
+    color:#929eaa;
+    max-width:600px;
+    line-height:1.8;
+}
+
+.handle{
+    margin-top:25px;
+    color:#168cff;
+    font-weight:bold;
+}
+
+/* CONTACT */
+
+.contact-box{
+    border:1px solid #18324b;
+    background:linear-gradient(145deg,#081525,#040a11);
+    border-radius:25px;
+    padding:55px;
+    text-align:center;
+}
+
+.contact-box h2{
+    font-size:45px;
+    margin-bottom:15px;
+}
+
+.contact-box p{
+    color:#8d99a6;
+    margin-bottom:30px;
+}
+
+/* FOOTER */
+
+footer{
+    border-top:1px solid #142333;
+    padding:30px 0;
+}
+
+.footer{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.footer p{
+    color:#667381;
+    font-size:12px;
+}
+
+.footer a{
+    color:#168cff;
+}
+
+/* ANIMATION */
+
+.reveal{
+    animation:reveal .8s ease both;
+}
+
+@keyframes reveal{
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+    .navlinks{
+        display:none;
     }
 
-    body {
-      background: #050505;
-      color: white;
-      line-height: 1.6;
+    .hero{
+        min-height:850px;
+        align-items:flex-start;
+        padding-top:90px;
     }
 
-    .container {
-      width: 90%;
-      max-width: 1100px;
-      margin: auto;
+    .hero-content{
+        width:100%;
+        text-align:center;
     }
 
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 22px 0;
+    .hero p{
+        margin-left:auto;
+        margin-right:auto;
     }
 
-    .logo {
-      font-size: 22px;
-      font-weight: bold;
+    .buttons{
+        justify-content:center;
     }
 
-    .btn {
-      display: inline-block;
-      padding: 12px 22px;
-      border-radius: 10px;
-      background: white;
-      color: black;
-      text-decoration: none;
-      font-weight: bold;
+    .hero-photo{
+        width:100%;
+        height:470px;
+        right:0;
+        bottom:-20px;
     }
 
-    .hero {
-      min-height: 75vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 60px 0;
+    .stats{
+        grid-template-columns:repeat(2,1fr);
+        margin-top:0;
     }
 
-    .hero h1 {
-      font-size: clamp(42px, 8vw, 82px);
-      line-height: 1;
-      margin-bottom: 25px;
+    .stat{
+        border-bottom:1px solid #17283a;
     }
 
-    .hero h1 span {
-      background: linear-gradient(90deg, #fff, #777);
-      -webkit-background-clip: text;
-      color: transparent;
+    .services,
+    .packages,
+    .courses{
+        grid-template-columns:1fr;
     }
 
-    .hero p {
-      color: #aaa;
-      max-width: 650px;
-      margin: 0 auto 30px;
-      font-size: 18px;
+    .results{
+        grid-template-columns:repeat(2,1fr);
     }
 
-    .buttons {
-      display: flex;
-      gap: 12px;
-      justify-content: center;
-      flex-wrap: wrap;
+    .showcase{
+        grid-template-columns:repeat(2,1fr);
     }
 
-    .btn.dark {
-      background: #151515;
-      color: white;
-      border: 1px solid #333;
+    .founder{
+        grid-template-columns:1fr;
     }
 
-    section {
-      padding: 80px 0;
+    .founder-img{
+        max-width:400px;
+        margin:auto;
     }
 
-    .section-title {
-      font-size: 38px;
-      margin-bottom: 35px;
-      text-align: center;
+    .founder h2{
+        font-size:38px;
     }
 
-    .about {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 30px;
-      align-items: center;
+    .section-head{
+        display:block;
     }
 
-    .card {
-      background: #0d0d0d;
-      border: 1px solid #222;
-      border-radius: 20px;
-      padding: 30px;
+    .section-head h2{
+        margin-bottom:18px;
+    }
+}
+
+@media(max-width:500px){
+
+    .hero h1{
+        font-size:48px;
     }
 
-    .card h3 {
-      font-size: 28px;
-      margin-bottom: 12px;
+    section{
+        padding:70px 0;
     }
 
-    .card p {
-      color: #aaa;
+    .stats{
+        grid-template-columns:1fr 1fr;
     }
 
-    .services {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
+    .results,
+    .showcase{
+        grid-template-columns:1fr 1fr;
     }
 
-    .service {
-      padding: 28px;
-      background: #0d0d0d;
-      border: 1px solid #222;
-      border-radius: 18px;
+    .contact-box{
+        padding:35px 20px;
     }
 
-    .service h3 {
-      margin-bottom: 10px;
+    .contact-box h2{
+        font-size:34px;
     }
-
-    .service p {
-      color: #999;
-    }
-
-    .contact {
-      text-align: center;
-      padding-bottom: 100px;
-    }
-
-    footer {
-      border-top: 1px solid #222;
-      padding: 25px 0;
-      text-align: center;
-      color: #777;
-    }
-
-    @media (max-width: 750px) {
-      .about,
-      .services {
-        grid-template-columns: 1fr;
-      }
-
-      .hero {
-        min-height: 65vh;
-      }
-
-      nav {
-        padding: 18px 0;
-      }
-    }
-  </style>
+}
+</style>
 </head>
 
 <body>
 
-  <div class="container">
+<!-- NAVBAR -->
 
-    <nav>
-      <div class="logo">GYANI BABA AGENCY</div>
-      <a class="btn" href="https://t.me/NiceGyani" target="_blank">
-        Contact
-      </a>
-    </nav>
+<div class="container">
+<nav>
 
-    <section class="hero">
-      <div>
-        <h1>Build. Grow.<br><span>Dominate.</span></h1>
+    <div class="logo">
+        GYANI BABA <span>AGENCY</span>
+    </div>
 
-        <p>
-          Welcome to Gyani Baba Agency — helping creators,
-          brands and businesses build a strong digital presence.
-        </p>
+    <div class="navlinks">
+        <a href="#services">Services</a>
+        <a href="#packages">Packages</a>
+        <a href="#results">Results</a>
+        <a href="#work">Work</a>
+        <a href="#courses">Courses</a>
+        <a href="#about">About</a>
+    </div>
 
-        <div class="buttons">
-          <a class="btn" href="https://t.me/NiceGyani" target="_blank">
-            Get Started
-          </a>
+    <a class="navbtn" href="https://t.me/NiceGyani" target="_blank">
+        @NiceGyani
+    </a>
 
-          <a class="btn dark" href="#about">
-            About Me
-          </a>
-        </div>
-      </div>
-    </section>
+</nav>
+</div>
 
-    <section id="about">
-      <h2 class="section-title">About the Founder</h2>
 
-      <div class="about">
-        <div class="card">
-          <h3>I'm Gyani Baba</h3>
-          <p>
-            I help people and businesses create a professional
-            online presence through digital solutions, creative
-            ideas and modern technology.
-          </p>
-        </div>
+<!-- HERO -->
 
-        <div class="card">
-          <h3>@NiceGyani</h3>
-          <p>
-            Connect with me directly on Telegram for collaborations,
-            projects and enquiries.
-          </p>
-          <br>
-          <a class="btn" href="https://t.me/NiceGyani" target="_blank">
-            Message Me
-          </a>
-        </div>
-      </div>
-    </section>
+<section class="hero">
 
-    <section>
-      <h2 class="section-title">What We Do</h2>
+<div class="container">
 
-      <div class="services">
+<div class="hero-content reveal">
 
-        <div class="service">
-          <h3>🌐 Websites</h3>
-          <p>
-            Modern and professional landing pages
-            for brands and creators.
-          </p>
-        </div>
+<div class="smalltitle">
+MARKETING / CONTENT / GROWTH
+</div>
 
-        <div class="service">
-          <h3>🤖 AI Solutions</h3>
-          <p>
-            Smart AI-powered ideas and digital solutions
-            for modern businesses.
-          </p>
-        </div>
+<h1>
+GYANI BABA<br>
+<span class="blue">AGENCY</span>
+</h1>
 
-        <div class="service">
-          <h3>🚀 Digital Growth</h3>
-          <p>
-            Creative strategies to improve your
-            online presence and reach.
-          </p>
-        </div>
+<p>
+Turning ideas into impact. We help creators, brands and businesses
+grow online through content, marketing, branding and digital strategy.
+</p>
 
-      </div>
-    </section>
+<div class="buttons">
 
-    <section class="contact">
-      <h2 class="section-title">Let's Work Together</h2>
+<a class="btn" href="https://t.me/NiceGyani" target="_blank">
+✈ Work With Me
+</a>
 
-      <p style="color:#999; margin-bottom:25px;">
-        Have a project or idea? Let's talk.
-      </p>
+<a class="btn btn-outline" href="#services">
+View Services →
+</a>
 
-      <a class="btn" href="https://t.me/NiceGyani" target="_blank">
-        Contact @NiceGyani
-      </a>
-    </section>
+</div>
 
-  </div>
+</div>
 
-  <footer>
-    © 2026 Gyani Baba Agency. All Rights Reserved.
-  </footer>
+<div class="hero-photo">
+
+<img src="gyani.jpg" alt="Gyani Baba">
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- STATS -->
+
+<div class="container">
+
+<div class="stats">
+
+<div class="stat">
+<h2>50+</h2>
+<p>Happy Clients</p>
+</div>
+
+<div class="stat">
+<h2>10M+</h2>
+<p>Total Views</p>
+</div>
+
+<div class="stat">
+<h2>120+</h2>
+<p>Projects Completed</p>
+</div>
+
+<div class="stat">
+<h2>4.9/5</h2>
+<p>Client Satisfaction</p>
+</div>
+
+</div>
+
+</div>
+
+
+<!-- SERVICES -->
+
+<section id="services">
+
+<div class="container">
+
+<div class="section-head">
+
+<div>
+<div class="smalltitle">OUR SERVICES</div>
+<h2>What I Do <span class="blue">Best</span></h2>
+</div>
+
+<p>
+Everything you need to build a powerful online presence
+and turn your digital ideas into real growth.
+</p>
+
+</div>
+
+
+<div class="services">
+
+<div class="card">
+<div class="icon">◎</div>
+<h3>Social Media</h3>
+<p>
+Grow your presence, build your brand and create a strong
+community across social platforms.
+</p>
+</div>
+
+<div class="card">
+<div class="icon">▶</div>
+<h3>Content Creation</h3>
+<p>
+Shorts, Reels, Posts and creative content designed
+to attract attention.
+</p>
+</div>
+
+<div class="card">
+<div class="icon">▣</div>
+<h3>Video Editing</h3>
+<p>
+Clean, cinematic and engaging edits for creators
+and businesses.
+</p>
+</div>
+
+<div class="card">
+<div class="icon">◈</div>
+<h3>Ad Management</h3>
+<p>
+Digital advertising strategies designed to reach
+the right audience.
+</p>
+</div>
+
+<div class="card">
+<div class="icon">✦</div>
+<h3>Branding & Design</h3>
+<p>
+Logos, banners, thumbnails and complete digital
+brand identity.
+</p>
+</div>
+
+<div class="card">
+<div class="icon">☏</div>
+<h3>Consultation</h3>
+<p>
+Strategy, guidance and support to help you move
+your project forward.
+</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- PACKAGES -->
+
+<section id="packages">
+
+<div class="container">
+
+<div class="section-head">
+
+<div>
+<div class="smalltitle">PACKAGES</div>
+<h2>Choose Your <span class="blue">Plan</span></h2>
+</div>
+
+<p>
+Flexible plans for creators, startups and established brands.
+</p>
+
+</div>
+
+
+<div class="packages">
+
+<div class="package">
+
+<h3>Basic</h3>
+
+<div class="price">
+₹2,999 <small>/month</small>
+</div>
+
+<ul>
+<li>Social Media Management</li>
+<li>8 Creative Posts</li>
+<li>Basic Analytics</li>
+<li>5 Days Support</li>
+</ul>
+
+<a class="btn btn-outline" href="https://t.me/NiceGyani" target="_blank">
+Get Started
+</a>
+
+</div>
+
+
+<div class="package popular">
+
+<div class="badge">MOST POPULAR</div>
+
+<h3>Standard</h3>
+
+<div class="price">
+₹5,999 <small>/month</small>
+</div>
+
+<ul>
+<li>Full Content Creation</li>
+<li>15 Creatives / Month</li>
+<li>Advanced Marketing</li>
+<li>Priority Support</li>
+</ul>
+
+<a class="btn" href="https://t.me/NiceGyani" target="_blank">
+Get Started
+</a>
+
+</div>
+
+
+<div class="package">
+
+<h3>Premium</h3>
+
+<div class="price">
+₹9,999 <small>/month</small>
+</div>
+
+<ul>
+<li>Everything in Standard</li>
+<li>Unlimited Creatives</li>
+<li>Advanced Ad Strategy</li>
+<li>1-on-1 Consultation</li>
+</ul>
+
+<a class="btn btn-outline" href="https://t.me/NiceGyani" target="_blank">
+Get Started
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- RESULTS -->
+
+<section id="results">
+
+<div class="container">
+
+<div class="section-head">
+
+<div>
+<div class="smalltitle">REAL RESULTS</div>
+<h2>Our Work <span class="blue">Speaks</span></h2>
+</div>
+
+<p>
+Focused on meaningful growth, better content and
+stronger digital presence.
+</p>
+
+</div>
+
+
+<div class="results">
+
+<div class="result">
+<h3>+320%</h3>
+<p>Follower Growth</p>
+</div>
+
+<div class="result">
+<h3>+180%</h3>
+<p>Engagement Rate</p>
+</div>
+
+<div class="result">
+<h3>+250%</h3>
+<p>Sales Increase</p>
+</div>
+
+<div class="result">
+<h3>10M+</h3>
+<p>Total Reach</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- WORK -->
+
+<section id="work">
+
+<div class="container">
+
+<div class="section-head">
+
+<div>
+<div class="smalltitle">CREATIVE SHOWCASE</div>
+<h2>Some Of My <span class="blue">Best</span> Work</h2>
+</div>
+
+<p>
+Creative ideas, campaigns and digital projects
+built for modern audiences.
+</p>
+
+</div>
+
+
+<div class="showcase">
+
+<div class="work">
+<img src="gyani.jpg" alt="Creative Work">
+<span>Content</span>
+</div>
+
+<div class="work">
+<img src="gyani.jpg" alt="Creative Work">
+<span>Branding</span>
+</div>
+
+<div class="work">
+<img src="gyani.jpg" alt="Creative Work">
+<span>Marketing</span>
+</div>
+
+<div class="work">
+<img src="gyani.jpg" alt="Creative Work">
+<span>Creative</span>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- COURSES -->
+
+<section id="courses">
+
+<div class="container">
+
+<div class="section-head">
+
+<div>
+<div class="smalltitle">LEARN WITH ME</div>
+<h2>Courses & <span class="blue">Resources</span></h2>
+</div>
+
+<p>
+Learn practical skills and grow your digital knowledge.
+</p>
+
+</div>
+
+
+<div class="courses">
+
+<div class="course">
+<div class="icon">◎</div>
+<h3>Social Media Growth</h3>
+<p>
+Learn how to grow your audience organically
+and build a strong presence.
+</p>
+<br>
+<a class="btn btn-outline" href="https://t.me/NiceGyani" target="_blank">
+Coming Soon
+</a>
+</div>
+
+<div class="course">
+<div class="icon">▣</div>
+<h3>Video Editing Mastery</h3>
+<p>
+Learn professional editing techniques for
+short-form and long-form videos.
+</p>
+<br>
+<a class="btn btn-outline" href="https://t.me/NiceGyani" target="_blank">
+Coming Soon
+</a>
+</div>
+
+<div class="course">
+<div class="icon">▶</div>
+<h3>Content Creation</h3>
+<p>
+Create content that gets attention,
+views and engagement.
+</p>
+<br>
+<a class="btn btn-outline" href="https://t.me/NiceGyani" target="_blank">
+Coming Soon
+</a>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- FOUNDER -->
+
+<section id="about">
+
+<div class="container">
+
+<div class="founder">
+
+<div class="founder-img">
+<img src="gyani.jpg" alt="Gyani Baba">
+</div>
+
+<div>
+
+<div class="smalltitle">ABOUT THE FOUNDER</div>
+
+<h2>
+I'm <span class="blue">Gyani Baba</span>
+</h2>
+
+<p>
+I'm Gyani Baba — the founder of Gyani Baba Agency.
+I work on digital growth, content, branding and creative
+technology, helping creators and businesses turn their
+ideas into a strong online presence.
+</p>
+
+<div class="handle">
+✈ Telegram: @NiceGyani
+</div>
+
+<br>
+
+<a class="btn" href="https://t.me/NiceGyani" target="_blank">
+Connect With Me
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section>
+
+<div class="container">
+
+<div class="contact-box">
+
+<div class="smalltitle">
+LET'S WORK TOGETHER
+</div>
+
+<h2>
+Have A <span class="blue">Project?</span>
+</h2>
+
+<p>
+Have an idea in mind? Let's turn it into something powerful.
+</p>
+
+<a class="btn" href="https://t.me/NiceGyani" target="_blank">
+✈ Message @NiceGyani
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<div class="container">
+
+<div class="footer">
+
+<p>
+© 2026 Gyani Baba Agency. All Rights Reserved.
+</p>
+
+<a href="https://t.me/NiceGyani" target="_blank">
+@NiceGyani
+</a>
+
+</div>
+
+</div>
+
+</footer>
 
 </body>
 </html>
